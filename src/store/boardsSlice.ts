@@ -17,7 +17,8 @@ type BoardsState = {
 
 const initialState: BoardsState = {
     boards: [
-        {id: 1, title: 'Надо сделать', items: [{id: 1, title: 'Прийти домой'}]}
+        {id: 1, title: 'Надо сделать', items: [{id: 1, title: 'Прийти домой'}, {id: 2, title: 'Съездить с женой в KFC'}]},
+        {id: 2, title: 'Сделано', items: [{id: 3, title: 'Сказать жене, что люблю её'}]},
     ]
 }
 

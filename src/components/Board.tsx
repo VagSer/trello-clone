@@ -1,4 +1,5 @@
 import Item from "./Item"
+import '../styles/Board.css'
 
 interface IItem {
     id: number
@@ -13,9 +14,9 @@ interface IBoard {
 
 export default function Board(props: IBoard) {
     return(
-        <div>
-            <h3>{props.title}</h3>
-            {props.items.map(item => <Item id={item.id} title={item.title}/>)}
+        <div className="board">
+            <h3 className="board__name">{props.title}</h3>
+            {props.items.map(item => <Item key={item.id} id={item.id} title={item.title}/>)}
         </div>
     )
 }
