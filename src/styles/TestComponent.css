@@ -1,0 +1,12 @@
+.item {
+    border: 1px solid lightblue;
+    padding: 10px;
+    margin: 1rem;
+    cursor: grab;
+}
+
+.board {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 1rem;
+}
