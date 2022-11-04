@@ -12,6 +12,7 @@ function App() {
 
   return (
     <div>
+      <AppHeader />
       {boards.map(board => 
       <Board 
         key={board.id} 

@@ -8,18 +8,21 @@ export default function AppHeader() {
   const dispatch = useAppDispatch()
 
   return (
-    <AppBar position="sticky" sx={{padding: '1rem', background: 'lightgrey'}}>
-      <div>
+    <AppBar position="sticky" sx={{padding: '1rem'}}>
+      <div style={{display: 'flex'}}>
         <TextField 
           type="text"
           label="Новая доска"
+
           sx={{background: 'white', borderRadius: '5px'}}
+          variant = 'filled'
+
           value={newBoard}
           onChange={e => setNewBoard(e.target.value)}
         />
         <Button
           variant = 'contained'
-          sx={{height: '100%', margin: 'auto 0'}}
+          color = 'success'
           onClick = {() => {
             dispatch(addBoard(newBoard))
             setNewBoard('')
