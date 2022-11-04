@@ -2,6 +2,7 @@ import './App.css';
 import Board from './components/Board';
 import { useAppSelector } from './hook';
 import {useState} from 'react'
+import AppHeader from './components/AppHeader';
 
 function App() {
   const boards = useAppSelector(state => state.boards.boards)

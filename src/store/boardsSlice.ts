@@ -32,7 +32,7 @@ const boardsSlice = createSlice({
     initialState,
     reducers: {
        addBoard(state, action: PayloadAction<string>) {
-           state.boards.push({
+           if (action.payload) state.boards.push({
                id: Date.now(),
                title: action.payload,
                items: []
@@ -42,7 +42,7 @@ const boardsSlice = createSlice({
            state.boards = state.boards.filter(board => board.id !== action.payload)
        },
        addItem(state, action: PayloadAction<NewItem>) {
-           state.boards = state.boards.map(board => board.id === action.payload.boardID ? {...board, items: [...board.items, {id: Date.now(), title: action.payload.newItem}]} : board)
+           if(action.payload.newItem) state.boards = state.boards.map(board => board.id === action.payload.boardID ? {...board, items: [...board.items, {id: Date.now(), title: action.payload.newItem}]} : board)
        }
     }
 })

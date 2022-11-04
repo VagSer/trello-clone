@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  background: -webkit-linear-gradient(90deg,#cce6ff,#7abfff,#52abff); /* Chrome 10-25, Safari 5.1-6 */ 
+  background: linear-gradient(90deg,#cce6ff,#7abfff,#52abff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,3 +13,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+

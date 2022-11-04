@@ -1,3 +1,4 @@
+import { Paper } from '@mui/material'
 import '../styles/Item.css'
 
 interface IItem {
@@ -7,11 +8,11 @@ interface IItem {
 
 export default function Item(props: IItem) {
     return(
-        <div
+        <Paper
             draggable={true}
             className="item"
         >
             {props.title}
-        </div>
+        </Paper>
     )
 }
