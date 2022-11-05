@@ -20,7 +20,7 @@ export default function Board(props: IBoard) {
     return(
         <Card className="board">
             <CardHeader title={props.title}/>
-            {props.items.map(item => <Item key={item.id} id={item.id} title={item.title}/>)}
+            {props.items.map(item => <Item key={item.id} id={item.id} title={item.title} boardID={props.id}/>)}
             <NewItem boardID={props.id}/>
         </Card>
     )
