@@ -54,6 +54,10 @@ const boardsSlice = createSlice({
        removeBoard(state, action: PayloadAction<number>) {
            state.boards = state.boards.filter(board => board.id !== action.payload)
        },
+       removeItem(state, action: PayloadAction<SwapItem>) {
+           const index = state.boards.findIndex(board => board.id === action.payload.boardID)
+           state.boards[index].items = state.boards[index].items.filter(item => item.id !== action.payload.itemID)
+       },
        addItem(state, action: PayloadAction<NewItem>) {
            if(action.payload.newItem) state.boards = state.boards.map(board => board.id === action.payload.boardID ? {...board, items: [...board.items, {id: Date.now(), title: action.payload.newItem}]} : board)
        },
@@ -73,10 +77,9 @@ const boardsSlice = createSlice({
             console.log(state.itemTwo)
             }
        },
-       
     }
 })
 
-export const {addBoard, removeBoard, addItem, setItemOne, setItemTwo} = boardsSlice.actions
+export const {addBoard, addItem, removeBoard, removeItem, setItemOne, setItemTwo} = boardsSlice.actions
 
 export default boardsSlice.reducer

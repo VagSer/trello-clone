@@ -1,6 +1,7 @@
-import { Paper } from '@mui/material'
+import { IconButton, Paper } from '@mui/material'
 import { useAppDispatch } from '../hook'
-import { setItemOne, setItemTwo } from '../store/boardsSlice'
+import { removeItem, setItemOne, setItemTwo } from '../store/boardsSlice'
+import ClearIcon from '@mui/icons-material/Clear';
 import '../styles/Item.css'
 
 interface IItem {
@@ -16,10 +17,14 @@ export default function Item(props: IItem) {
         <Paper
             draggable={true}
             className="item"
-            onDragStart = {() => dispatch(setItemOne({boardID: props.boardID, itemID: props.id}))}
-            onDragLeave = {() => dispatch(setItemTwo({boardID: props.boardID, itemID: props.id}))}
+
         >
             {props.title}
+            <IconButton
+            onClick = {() => dispatch(removeItem({boardID: props.boardID, itemID: props.id}))}
+            >
+                <ClearIcon />
+            </IconButton>
         </Paper>
     )
 }
